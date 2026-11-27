@@ -15,26 +15,22 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(class_loader REQUIRED)
 find_package(costmap_converter_msgs REQUIRED)
-find_package(cv_bridge REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav2_costmap_2d REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
-find_package(OpenCV REQUIRED)
 find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 
 set(dependencies
     class_loader
     costmap_converter_msgs
-    cv_bridge
     geometry_msgs
     nav2_costmap_2d
     tf2
     tf2_geometry_msgs
     tf2_ros
-    OpenCV
     pluginlib
     rclcpp
 )
@@ -48,12 +44,6 @@ add_library(costmap_converter SHARED
   src/costmap_to_polygons_concave.cpp
   src/costmap_to_lines_convex_hull.cpp
   src/costmap_to_lines_ransac.cpp
-  src/costmap_to_dynamic_obstacles/costmap_to_dynamic_obstacles.cpp
-  src/costmap_to_dynamic_obstacles/background_subtractor.cpp
-  src/costmap_to_dynamic_obstacles/blob_detector.cpp
-  src/costmap_to_dynamic_obstacles/multitarget_tracker/Ctracker.cpp
-  src/costmap_to_dynamic_obstacles/multitarget_tracker/Kalman.cpp
-  src/costmap_to_dynamic_obstacles/multitarget_tracker/HungarianAlg.cpp
 )
 
 ament_target_dependencies(costmap_converter 

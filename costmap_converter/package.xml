@@ -21,7 +21,6 @@
     
   <depend>class_loader</depend>
   <depend>costmap_converter_msgs</depend>
-  <depend>cv_bridge</depend>
   <depend>geometry_msgs</depend>
   <depend>nav2_costmap_2d</depend>
   <depend>tf2</depend>
